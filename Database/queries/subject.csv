@@ -1,0 +1,19 @@
+Subject_code,Subject_Name,LB_AS,Is_elective,Semester
+12CS52,"Computer Networks-I",1,0,5
+12CS53,"Microprocessor & Microcontroller",0,0,5
+12CS54,"Database Management System",0,0,5
+12CS5A1,"System Simulation & Modeling",2,1,5
+12CS5A2,"Probability & Statistics",2,1,5
+12CS5A3,"Object Oriented Analysis & Design",2,1,5
+12CS5A4,"Introduction to Machine Learning",1,1,5
+12CS5A5,"Distributed Operating System",2,1,5
+12CS5A6,"Artificial Intelligence",2,1,5
+12CS5A7,"Grapgh Theory",2,1,5
+12CS5B1,"Java & JEE",2,1,5
+12CS5B2,"Introduction to mainframes",2,1,5
+12CS5B3,"Middleware Technologies",2,1,5
+12CS5B4,"Advanced Algorithms",2,1,5
+12CS5B5,"Fundamentals of Computer Vision",2,1,5
+12CS5B6,"Multimedia Computing",2,1,5
+12CS5B7,"Distributed Systems",2,1,5
+12HSI51,"Intellectual Property Rights & Entrepreneurship",2,0,5

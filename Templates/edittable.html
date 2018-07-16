@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Student Portal</title>
+        
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" >
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap-toggle.min.css')}}">
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap-toggle.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+        <style type="text/css">
+        h1.attendance
+            {
+                position: relative;
+                top: 10%;
+                left: 0px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 200%;
+            }
+            table.pos1
+            {
+                position: relative;
+                top: 10%;
+            }
+            h1.marks
+            {
+                position: relative;
+                top: 10%;
+                left: 550px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 200%;
+            }
+            table.pos2
+            {
+                position: relative;
+                top: 10%;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="/dashboard_teacher">
+              <img src="{{url_for('static',filename='favicon.ico')}}" width="30" height="30" alt="">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <a class="navbar-brand" href="/dashboard_teacher">Student Portal<span class="sr-only">(current)</span></a>
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="navbar-nav mr-auto">
+                
+                
+              </ul>
+        
+              <ul class="navbar-nav mr-right">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/aboutteacher">About</a>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/changepwd">Change Password</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+              </ul>
+        
+            </div>
+        </nav>
+        {% include 'include/_message.html' %}
+        <div class="container">
+            <h1>{{sem}} {{sec}}</h1>
+            <h1>{{code}}</h1>
+            <h1 class="attendance">Attendance</h1>
+            <form action="/insert" method="POST">
+            <table class = "table table-striped pos1">
+                    <tr>
+                        <th>USN</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                     </tr>
+                     {% for re in res %}
+                        <tr>
+                            <td>{{re.USN}}</td>
+                            {% if re.d1 == 1 %}
+                            <td>
+                            <input type="checkbox" checked name="{{re.USN}}1"></td>
+                            {% elif re.d1 == 0 %}
+                            <td><input type="checkbox"  name="{{re.USN}}1"></td>
+                            {% else %}
+                            <td><input type="checkbox" disabled ></td>
+                            {% endif %}
+                            {% if re.d2 == 1 %}
+                            <td>
+                                <input type="checkbox" checked  name="{{re.USN}}2"></td>
+                            {% elif re.d2 == 0 %}
+                            <td><input type="checkbox"  name="{{re.USN}}2"></td>
+                            {% else %}
+                            <td><input type="checkbox" disabled ></td>
+                            {% endif %}
+                            {% if re.d3 == 1 %}
+                            <td>
+                                <input type="checkbox" checked  name="{{re.USN}}3"></td>
+                            {% elif re.d3 == 0 %}
+                            <td><input type="checkbox"  name="{{re.USN}}3"></td>
+                            {% else %}
+                            <td><input type="checkbox" disabled ></td>
+                            {% endif %}
+                            {% if re.d4 == 1 %}
+                            <td>
+                                <input type="checkbox" checked  name="{{re.USN}}4"></td>
+                            {% elif re.d4 == 0 %}
+                            <td><input type="checkbox"  name="{{re.USN}}4"></td>
+                            {% else %}
+                            <td><input type="checkbox" disabled ></td>
+                            {% endif %}
+                            {% if re.d5 == 1 %}
+                            <td>
+                                <input type="checkbox" checked  name="{{re.USN}}5"></td>
+                            {% elif re.d5 == 0 %}
+                            <td><input type="checkbox"  name="{{re.USN}}5"></td>
+                            {% else %}
+                            <td><input type="checkbox" disabled ></td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>
+                <input type="submit" class="pos2" id="button2" value="Submit" />
+                </form>
+        </div>
+    </body>
+</html>

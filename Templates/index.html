@@ -1,0 +1,65 @@
+<html>
+	
+	<title>Student Portal</title>
+	<head>
+		<link type="text/css" rel="stylesheet" href="static/css/style.css" />
+		
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+		<meta name="Description" content="Student Portal Login Page"/>
+		
+        <meta name="Keywords" content="Student, RVCE, Login, Page, Student Portal, Portal, Attendance, Marks"/>
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="933988933316672" />
+<meta property="og:site_name" content="www.rvce.edu.in" />
+<meta name="author" content="rvce.edu.in">
+        <link rel="shortcut icon" href="static/favicon.ico">
+	</head>
+	<body>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73364464-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+		<center><div class="base">
+			<div id="logo">
+				<img src="static/images/logo.png" width="70" height="70" />
+			</div>
+			<div id="info1">
+				Student Attendance Portal 
+			</div>
+			<div id="info2">
+				Sign in to continue to Portal
+			</div>
+			<div id="form1">
+				<div id="form-img">
+				<img src="static/images/profile-img.png" width="99" height="99" />
+				</div>
+				<form action="" method="POST">
+				<div id="mailbox">
+					<input placeholder="Enter Login ID" class = "form-control" type="username" name="username" style="width:270px; height:42px; border: solid 1px #c2c4c6; font-size:16px; padding-left:8px;" value = "{{ request.form.username }}" />
+				</div>
+                <div id="Password">
+					<input placeholder="Password" type="password" name="password" style="width:270px; height:42px; border: solid 1px #c2c4c6; font-size:16px; padding-left:8px;" class = "form-control" value = "{{request.form.password}}" />
+				</div>
+                
+                
+				<div>
+				   <input type="submit" id="button2" value="Submit" />
+				</div>
+				{% include 'include/_message.html' %}
+				</form>
+				
+			</div>
+		</div>
+		</center>
+	</body>
+	
+</html>

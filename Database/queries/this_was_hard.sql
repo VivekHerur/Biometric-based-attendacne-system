@@ -1,0 +1,8 @@
+SET @sub='12CS53';
+SET @usn='1RV15CS162';
+
+select * from (select 'Test1' AS Marks,attendance.marks.Test1 as Given,(select IF(attendance.subject.LB_AS<=1,40,45) FROM attendance.subject WHERE attendance.subject.Subject_code=attendance.marks.Subject_Subject_code) as Total from attendance.marks where attendance.marks.Student_USN=@usn and attendance.marks.Subject_Subject_code=@sub
+UNION ALL SELECT 'Test2' ,attendance.marks.Test2,(select IF(attendance.subject.LB_AS<=1,40,45) FROM attendance.subject WHERE attendance.subject.Subject_code=attendance.marks.Subject_Subject_code) from attendance.marks where attendance.marks.Student_USN=@usn and attendance.marks.Subject_Subject_code=@sub
+UNION ALL SELECT 'Test3' ,attendance.marks.Test3,(select IF(attendance.subject.LB_AS<=1,40,45) FROM attendance.subject WHERE attendance.subject.Subject_code=attendance.marks.Subject_Subject_code) from attendance.marks where attendance.marks.Student_USN=@usn and attendance.marks.Subject_Subject_code=@sub
+UNION ALL SELECT (SELECT IF(attendance.subject.LB_AS <=1,'Self Study','Assignment') FROM attendance.subject WHERE attendance.subject.Subject_code = @sub),attendance.marks.AS_SS,(select IF(attendance.subject.LB_AS<=1,20,10) FROM attendance.subject WHERE attendance.subject.Subject_code=attendance.marks.Subject_Subject_code) from attendance.marks where attendance.marks.Student_USN=@usn and attendance.marks.Subject_Subject_code=@sub
+UNION ALL SELECT (SELECT IF(attendance.subject.LB_AS =0,'Lab',NULL) FROM attendance.subject WHERE attendance.subject.Subject_code = @sub),attendance.marks.Internal_Lab,'50' from attendance.marks where attendance.marks.Student_USN=@usn and attendance.marks.Subject_Subject_code=@sub ) T1 where Marks IS NOT NULL

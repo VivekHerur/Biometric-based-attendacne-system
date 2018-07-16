@@ -1,0 +1,4 @@
+USN,First_name,Middle_name,Last_name,Password,Semester,Section,Counselor
+1RV15CS002,Aakanksha,NULL,Ashok,$5$rounds=535000$J.SoljtHZNmKX277$H4jEonluuTqk8sC84di.8JN2dOOddBrQqitGaWXeAR0,5,A,1CS02
+1RV15CS162,Srinivas,NULL,"S T",$5$rounds=535000$AuUc/sjwGqotRKSO$xdrCwTr1PJoahxVuKCrWYBNZhyoq6qrBmRak.4YsPJ5,5,D,1CS01
+1RV15CS168,Suraj,R,Naik,$5$rounds=535000$WSWdB56QJLxIYcpU$GTndgR2fhySob8bMZQF8QQxbk9U0HTgV6wf.rGfk6O1,5,D,1CS01

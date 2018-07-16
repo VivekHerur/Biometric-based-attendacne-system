@@ -1,0 +1,1 @@
+SELECT attendance.student.USN,attendance.student.First_name,attendance.student.Middle_name,attendance.student.Last_name,attendance.student.Semester,attendance.student.Section FROM attendance.student WHERE attendance.student.Counselor = '1CS02'

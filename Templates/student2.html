@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, intital-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <title>Student Portal</title>
+        
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" >
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/w3.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+        <style type="text/css">
+            h1.usn {
+                position: fixed;
+                top: 150px;
+                left: 550px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 300%;
+            }
+            h1.sem {
+                position: fixed;
+                top: 150px;
+                left: 1000px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 300%;
+            }
+            h1.name {
+                position: fixed;
+                top:100px;
+                left: 550px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 300%;
+            }
+            h1.course {
+                position: fixed;
+                top: 200px;
+                left: 550px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 300%;
+            }
+            h1.coursename {
+                position: fixed;
+                top: 240px;
+                left: 550px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 300%;
+            }
+            h1.attendance {
+                position: fixed;
+                top: 290px;
+                left: 550px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 300%;
+            }
+            p.attendance {
+                position: fixed;
+                top: 260px;
+                left: 550px;
+                padding: 10px;
+                margin:0px;
+                font-size: 200%;
+            }
+            p.marks {
+                position: fixed;
+                top: 300px;
+                left: 550px;
+                padding: 10px;
+                margin:0px;
+                font-size: 200%;
+            }
+            table.pos {
+                position:fixed;
+                top: 370px;
+            }
+            h1.history {
+                position: fixed;
+                top: 310px;
+                left: 1200px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 100%;
+            }
+         </style>
+    </head>
+    <body>
+        <div class="w3-bar w3-black w3-large">
+            <a href="/dashboard_student" class="w3-bar-item w3-button"><img src="{{url_for('static',filename='favicon.ico')}}" width="35" height="35" alt=""></a>
+            <a href="/dashboard_student" class="w3-bar-item w3-button">Home</a>
+            <div class="w3-right">
+                <p>&nbsp &nbsp &nbsp</p>
+            </div>
+            <div class="w3-dropdown-click w3-right">
+                <button class="w3-button" onclick="myFunction()">
+                    {{session.name}}
+                </button>
+                <div id="demo" class="w3-dropdown-content w3-bar-block w3-card-2">
+                    <a href="/changepwd" class="w3-bar-item w3-button">Change Password</a>
+                    <a href="/aboutstudent" class="w3-bar-item w3-button">About</a>
+                    <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+                </div>
+            </div>
+        </div>
+        {% include 'include/_message.html' %}
+        <div class="w3-container">
+           <h1 class="usn">{{session.username}}</h1>
+           <h1 class="sem">{{session.semester}} {{session.section}}</h1>
+           <h1 class="name">{{session.name}} {{session.name3}}</h1>
+           <h1 class="course">{{coursecode}}</h1>
+           <h1 class="coursename">{{name.Subject_Name}}</h1>
+           <table class = "table table-striped pos">
+                <tr>
+                        <th>Marks</th>
+                        <th>Given</th>
+                        <th>Total</th>
+                </tr>
+                {% for tab in tabs %}
+                    <tr>
+                        <td>{{tab.Marks}}</td>
+                        <td>{{tab.Given}}</td>
+                        <td>{{tab.Total}}</td>
+                    </tr>
+                {% endfor %}
+           </table>
+        </div>
+        <script>
+        function myFunction(){
+            var x = document.getElementById("demo");
+            if(x.className.indexOf("w3-show")== -1)
+            {
+                x.className += " w3-show";
+            }
+            else{
+                x.className = x.className.replace(" w3-show","");
+            }
+        }
+           function myFunction2() {
+               document.getElementById("his").defaultValue = "{{coursecode}}";
+           }
+        </script>
+    </body>
+</html>

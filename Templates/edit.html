@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Student Portal</title>
+        
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" >
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+        <style type="text/css">
+         h1.heading {
+                position: relative;
+                top: 10%;
+                left: 400px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 300%;
+            }
+            table.pos {
+                position: relative;
+                top: 10%;
+                tab-size: 50%;
+            }
+            h1.check {
+                position: relative;
+                top: 10%;
+                left: 300px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 100%;
+            }
+            input.pos1{
+                position: relative;
+                top: 10%;
+                left: 350px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 100%;
+            }
+            input.pos2{
+                position: relative;
+                top: 10%;
+                left: 350px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 100%;
+            }
+            input.pos3{
+                position: relative;
+                top: 10%;
+                left: 350px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 100%;
+            }
+            input.pos4{
+                position: relative;
+                top: 10%;
+                left: 350px;
+                padding: 10px;
+                margin: 0px;
+                font-size: 100%;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="/dashboard_teacher">
+              <img src="{{url_for('static',filename='favicon.ico')}}" width="30" height="30" alt="">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <a class="navbar-brand" href="/dashboard_teacher">Student Portal<span class="sr-only">(current)</span></a>
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="navbar-nav mr-auto">
+                
+                
+              </ul>
+        
+              <ul class="navbar-nav mr-right">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/about">About</a>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/changepwd">Change Password</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+              </ul>
+        
+            </div>
+        </nav>
+        {% include 'include/_message.html' %}
+        <div class="container">
+                <h1 class="check">Please enter the classroom details and subject code</h1>
+            <div class="text-center">
+                <br />
+                <br />
+                <form action="" method="POST">
+                <div id="mailbox">
+					<input placeholder="Course Code" class = "pos1 form-control" type="code" name="code" style="width:270px; height:42px; border: solid 1px #c2c4c6; font-size:16px; padding-left:90px;" value = "{{ request.form.code }}" />
+                    
+                </div>
+                <div id="mailbox">
+                        <input placeholder="Semester" class = "pos2 form-control" type="sem" name="sem" style="width:270px; height:42px; border: solid 1px #c2c4c6; font-size:16px; padding-left:90px;" value = "{{ request.form.sem }}" />
+                        
+                    </div>
+                    <div id="mailbox">
+                            <input placeholder="Section" class = "pos3 form-control" type="section" name="section" style="width:270px; height:42px; border: solid 1px #c2c4c6; font-size:16px; padding-left:90px;" value = "{{ request.form.section }}" />
+                            
+                        </div>
+                <div id="mailbox">
+                    <input type="submit" class="pos4" id="button2" value="Submit" />
+                </div>
+                </form>
+                
+            </div>  
+        </div>
+    </body>
+</html>

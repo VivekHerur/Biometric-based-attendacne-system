@@ -1,0 +1,20 @@
+1) Add 3 A to classroom
+2) Add
+	12CS35	Computer Organisation and Architecture	1	0	3 
+to subject
+
+3)Add
+	1RV16CS001	French		Montana	$5$rounds=535000$TEBO.OWy0BHUPaVG$irQlA7UTDnku44zDnLcDPJZx70Fn6qHCTXA.c7AXDoB	3	A	1CS03
+to student
+
+4) Add 
+	1CS10,		Deepika,	 NULL, Dash, $5$rounds=535000$UYNABR5YSx8e099w$CAINPkJ9PSdN2P.wKjHbHjM3sGdngL4oT9W.8HmZFh0
+5) Add
+	'1CS10', '2017-10-16 11:30:00', '3', 'A', '12CS35'
+	'1CS10', '2017-10-17 11:30:00', '3', 'A', '12CS35'
+to completed class
+
+6) Add
+	'1RV16CS001', '1CS10', '2017-10-16 11:30:00'
+to atendance
+	
